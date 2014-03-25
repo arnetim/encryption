@@ -3,8 +3,11 @@ class User
   def initialize(username, password)
     @username = username
 
-    content_key = RbNaCl::Random.random_bytes
-    @encrypted_content_key = EncryptedAttribute.new(password, content_key)
+    # TODO: implement this method
+    # - create a new contentKey (tip: use RbNaCl::Random.random_bytes)
+    # - the contenKey should be encrypted with the password of the user
+    # - use EncryptedAttribute for storing an encrypted value
+
   end
 
   def username
@@ -12,17 +15,24 @@ class User
   end
 
   def content_key(password)
-    @encrypted_content_key.value(password)
+
+    # TODO: implement this method
+
   end
 
   def name=(value)
-    content_key = Application.session.content_key(self)
-    @encrypted_name = EncryptedAttribute.new(content_key, value)
+
+    # TODO: implement this method
+    # - store the name in an EncryptedAttribute
+    # - the name should be encrypted with the contentKey of the user
+    # - hint: the contentKey is stored in the session of the user
+
   end
 
   def name
-    content_key = Application.session.content_key(self)
-    @encrypted_name.value(content_key)
+
+    # TODO: implement this method
+
   end
 
   def gender=(value)

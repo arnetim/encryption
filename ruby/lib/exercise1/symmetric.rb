@@ -6,8 +6,11 @@ module Symmetric
   end
 
   def self.decrypt(key, ciphertext)
-    box = RbNaCl::RandomNonceBox.from_secret_key(key)
-    box.open(ciphertext)
+
+    # TODO: implement this method
+    # - take a look at the implementation of the #encrypt method
+    # - use box.open
+
   end
 
 end

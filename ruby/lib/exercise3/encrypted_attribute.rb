@@ -1,13 +1,19 @@
 class EncryptedAttribute
 
   def initialize(passphrase, value)
-    passphrase_hash = RbNaCl::Hash.sha256(passphrase)
-    @ciphertext = Symmetric.encrypt(passphrase_hash, value)
+
+    # TODO: implement this method
+    # - hash the passphrase, tip: use RbNaCl::Hash.sha256
+    # - use exercise1.Symmetric#encrypt
+
   end
 
   def value(passphrase)
-    passphrase_hash = RbNaCl::Hash.sha256(passphrase)
-    Symmetric.decrypt(passphrase_hash, @ciphertext)
+
+    # TODO: implement this method
+    # - hash the passphrase, tip: use RbNaCl::Hash.sha256
+    # - use exercise1.Symmetric#decrypt
+
   end
 
 end
