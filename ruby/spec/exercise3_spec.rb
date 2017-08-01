@@ -24,8 +24,8 @@ describe Application do
     user.name = 'a developer'
     user.gender = 'm'
 
-    user.name.should eql('a developer')
-    user.gender.should eql('m')
+    user.name.expect eql('a developer')
+    user.gender.expect eql('m')
   end
 
 end

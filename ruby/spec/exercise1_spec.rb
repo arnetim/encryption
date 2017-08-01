@@ -11,7 +11,7 @@ describe Symmetric do
     encrypted_message = Symmetric.encrypt(@key, @message)
     decrypted_message = Symmetric.decrypt(@key, encrypted_message)
 
-    decrypted_message.should eql(@message)
+    decrypted_message.expect eql(@message)
   end
 
 end
