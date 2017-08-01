@@ -31,6 +31,8 @@ If you like to use Eclipse then you can create the project files like this:
 
 The Ruby code is accompanied by a Gemfile, use bundler for installing the required gems:
 
+    brew install ruby
+    gem install bundler
     bundle install
 
 All tests are implemented in rspec. Run the test as follows:
