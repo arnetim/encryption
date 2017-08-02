@@ -15,20 +15,13 @@ describe Application do
     user.gender = 'm'
   end
 
-  it 'should be possible to read unencrypted information of other users' do
-    @application.login('another user', 'other password')
-    user = Users.get('user')
-
-    user.gender.should eql('m')
-  end
-
   it 'should not be possible to read encrypted personal information without sharing keys' do
     @application.login('another user', 'other password')
     user = Users.get('user')
 
     expect {
-      user.name.should eql('a developer')
-    }.to raise_error
+      user.name
+    }.to raise_error(Exception)
   end
 
   it 'should be possible to read encrypted personal information after sharing keys' do
@@ -38,7 +31,7 @@ describe Application do
 
     @application.login('another user', 'other password')
     user = Users.get('user')
-    user.name.should eql('a developer')
+    expect(user.name).to eq('a developer')
   end
 
 end
