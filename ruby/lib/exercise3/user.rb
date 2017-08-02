@@ -8,7 +8,7 @@ class User
     # - the contentKey should be encrypted with the password of the user
     # - use EncryptedAttribute for storing an encrypted value
 
-    @encrypted_content_key =
+    @encrypted_content_key = nil
 
   end
 
@@ -25,7 +25,7 @@ class User
     # - the name should be encrypted with the contentKey of the user
     # - hint: the contentKey is stored in the session of the user
 
-    @encrypted_name =
+    @encrypted_name = nil
 
   end
 

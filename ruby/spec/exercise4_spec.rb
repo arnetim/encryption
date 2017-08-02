@@ -15,13 +15,6 @@ describe Application do
     user.gender = 'm'
   end
 
-  it 'should be possible to read unencrypted information of other users' do
-    @application.login('another user', 'other password')
-    user = Users.get('user')
-
-    expect(user.gender).to eq('m')
-  end
-
   it 'should not be possible to read encrypted personal information without sharing keys' do
     @application.login('another user', 'other password')
     user = Users.get('user')

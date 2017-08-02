@@ -6,7 +6,7 @@ class EncryptedAttribute
     # - hash the passphrase, tip: use RbNaCl::Hash.sha256
     # - use exercise1.Symmetric#encrypt and store the encrypted attribute as an instance variable
 
-    @encrypted_attribute = 
+    @encrypted_attribute = nil
 
   end
 
