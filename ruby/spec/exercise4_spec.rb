@@ -19,7 +19,7 @@ describe Application do
     @application.login('another user', 'other password')
     user = Users.get('user')
 
-    user.gender.expect eql('m')
+    expect(user.gender).to eq('m')
   end
 
   it 'should not be possible to read encrypted personal information without sharing keys' do
@@ -27,8 +27,8 @@ describe Application do
     user = Users.get('user')
 
     expect {
-      user.name.expect eql('a developer')
-    }.to raise_error
+      user.name
+    }.to raise_error(Exception)
   end
 
   it 'should be possible to read encrypted personal information after sharing keys' do
@@ -38,7 +38,7 @@ describe Application do
 
     @application.login('another user', 'other password')
     user = Users.get('user')
-    user.name.expect eql('a developer')
+    expect(user.name).to eq('a developer')
   end
 
 end

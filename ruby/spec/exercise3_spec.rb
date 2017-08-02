@@ -9,23 +9,20 @@ describe Application do
     Users.add('user', 'a password')
   end
 
-  it 'fails decrypting without login' do
-    user = Users.get('user')
-
+  it 'fails decrypting content key with incorrect login' do
     expect {
-      user.name = 'a developer'
-    }.to raise_error
+      @application.login('user', 'other password')
+    }.to raise_error(RbNaCl::CryptoError)
   end
 
   it 'decrypts personal information' do
     @application.login('user', 'a password')
-
     user = Users.get('user')
     user.name = 'a developer'
     user.gender = 'm'
 
-    user.name.expect eql('a developer')
-    user.gender.expect eql('m')
+    expect(user.name).to eq('a developer')
+    expect(user.gender).to eq('m')
   end
 
 end

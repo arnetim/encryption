@@ -15,7 +15,7 @@ describe Asymmetric do
     encrypted_message = Asymmetric.encrypt(@receiver_public_key, @sender_private_key, @message)
     decrypted_message = Asymmetric.decrypt(@receiver_private_key, @sender_public_key, encrypted_message)
 
-    decrypted_message.expect eql(@message)
+    expect(decrypted_message).to eq(@message)
   end
 
 end
