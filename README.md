@@ -1,5 +1,6 @@
 # Workshop encryption
 Arne Timmerman, March 27th 2014
+-- updated Ruby exercises on August 2nd 2017
 
 A hands-on workshop encryption. The workshop contains of 4 exercises.
 
