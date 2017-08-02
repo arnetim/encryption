@@ -1,7 +1,7 @@
 module Symmetric
 
   def self.encrypt(key, message)
-    box = RbNaCl::RandomNonceBox.from_secret_key(key)
+    box = RbNaCl::SimpleBox.from_secret_key(key)
     box.box(message)
   end
 

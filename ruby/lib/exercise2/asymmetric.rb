@@ -4,7 +4,7 @@ module Asymmetric
 
     # TODO: implement this method
     # - take a look at the implementation exercise1.Symmetric#encrypt
-    # - use RbNaCl::RandomNonceBox.from_keypair
+    # - use Public key Encryption: https://github.com/cryptosphere/rbnacl/wiki/SimpleBox
 
   end
 
@@ -12,7 +12,7 @@ module Asymmetric
 
     # TODO: implement this method
     # - take a look at the implementation exercise1.Symmetric#decrypt
-    # - use RbNaCl::RandomNonceBox.from_keypair
+    # - use Public key Encryption: https://github.com/cryptosphere/rbnacl/wiki/SimpleBox
 
   end
 

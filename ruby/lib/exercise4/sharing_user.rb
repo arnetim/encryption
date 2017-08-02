@@ -6,6 +6,11 @@ class SharingUser < User
     private_key = RbNaCl::PrivateKey.generate
     @encrypted_private_key = EncryptedAttribute.new(password, private_key)
     @public_key = private_key.public_key
+    @shared_content_keys = {}
+  end
+
+  def add_shared_content_key(username, encrypted_content_key)
+    @shared_content_keys[username] = encrypted_content_key
   end
 
   def private_key(password)
@@ -22,7 +27,7 @@ class SharingUser < User
     # - get the contentKey of the logged in user
     # - get the privateKey of the logged in user (hint you should add this to Application.session)
     # - encrypt the content_key for other_user, using his / her public key
-    # - store the contentKey of the logged in user in a map of shared_content_keys for other_user
+    # - store the contentKey of the logged in user for other_user (using add_shared_content_key)
 
   end
 
